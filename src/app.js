@@ -1,6 +1,7 @@
 const express = require('express');
 const User = require('./models/users');
 const Hotel = require('./models/hotel');
+const Booking = require('./models/booking');
 
 const app = express();
 app.use(express.json());
@@ -26,6 +27,19 @@ app.post('/hotel', (req, res) => {
   hotel.save()
     .then(() => {
       res.status(201).json(hotel.toObject());
+    });
+});
+
+app.post('/booking', (req, res) => {
+  const booking = new Booking ({
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
+    user: req.body.userId,
+    hotel: req.body.hotelId,
+  });
+  booking.save()
+    .then(() => {
+      res.status(201).json(booking.toObject());
     });
 });
 
