@@ -1,0 +1,28 @@
+{
+  "name": "hotel-challenge",
+  "version": "1.0.0",
+  "description": "group challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -r dotenv/config index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MCRcodes/hotel-challenge.git"
+  },
+  "author": "July 18",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MCRcodes/hotel-challenge/issues"
+  },
+  "homepage": "https://github.com/MCRcodes/hotel-challenge#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.0"
+  },
+  "devDependencies": {
+    "dotenv": "^6.2.0",
+    "eslint-config-mcr-codes": "^1.3.0",
+    "nodemon": "^1.18.9"
+  }
+}
