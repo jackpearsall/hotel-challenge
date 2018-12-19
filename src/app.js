@@ -43,4 +43,20 @@ app.post('/booking', (req, res) => {
     });
 });
 
+app.patch('/booking/:id/accept', (req, res) => {
+  Booking.findById(req.params.id, (err, booking) => {
+    if (err || booking === null) {
+      res.status(404).json("Booking not found.")
+    } else {
+      booking.set({
+        accepted: true,
+      })
+      booking.save()
+      .then(() => {
+        res.status(200).json(booking.toObject());
+      }); 
+    }
+  });
+});
+
 module.exports = app;
